@@ -1,6 +1,6 @@
 export default function Resume() {
   return (
-    <section className="fade-in" style={{
+    <section className="fade-in mobile-padding" style={{
       minHeight: "100vh",
       display: "flex",
       alignItems: "center",
@@ -8,7 +8,7 @@ export default function Resume() {
       padding: "80px 20px",
       position: "relative",
     }}>
-      <div style={{
+      <div className="mobile-stack mobile-small-gap" style={{
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
@@ -35,8 +35,8 @@ export default function Resume() {
             alt="Majda Kamrain"
             className="hover-lift"
             style={{
-              width: "400px",
-              height: "400px",
+              width: "clamp(250px, 40vw, 400px)",
+              height: "clamp(250px, 40vw, 400px)",
               objectFit: "cover",
               borderRadius: "50%",
               border: "5px solid rgba(102, 126, 234, 0.3)",
@@ -46,9 +46,9 @@ export default function Resume() {
           />
         </div>
         
-        <div style={{
+        <div className="mobile-text-center" style={{
           flex: 1,
-          minWidth: "300px",
+          minWidth: "280px",
           textAlign: "center",
         }}>
           <p style={{
@@ -62,7 +62,7 @@ export default function Resume() {
           </p>
           
           <h1 style={{
-            fontSize: "clamp(40px, 8vw, 64px)",
+            fontSize: "clamp(32px, 8vw, 64px)",
             fontWeight: "800",
             marginBottom: "24px",
             lineHeight: "1.1",
@@ -71,21 +71,23 @@ export default function Resume() {
           </h1>
           
           <p style={{
-            fontSize: "20px",
+            fontSize: "clamp(16px, 4vw, 20px)",
             color: "#cbd5e0",
             maxWidth: "600px",
             margin: "0 auto 40px",
             lineHeight: "1.8",
+            padding: "0 10px",
           }}>
             Créative, rigoureuse et passionnée. Je conçois des solutions web modernes 
             et performantes pour transformer vos idées en réalité digitale.
           </p>
           
-          <div style={{
+          <div className="mobile-xs-gap" style={{
             display: "flex",
             gap: "20px",
             justifyContent: "center",
             flexWrap: "wrap",
+            padding: "0 10px",
           }}>
             <a
               href="./KAMRAINMajdacv.pdf"
@@ -98,8 +100,8 @@ export default function Resume() {
                   background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
                   color: "white",
                   fontWeight: "600",
-                  padding: "16px 32px",
-                  fontSize: "16px",
+                  padding: "clamp(12px, 3vw, 16px) clamp(20px, 5vw, 32px)",
+                  fontSize: "clamp(14px, 3.5vw, 16px)",
                   border: "none",
                   borderRadius: "50px",
                   cursor: "pointer",
@@ -107,6 +109,7 @@ export default function Resume() {
                   alignItems: "center",
                   gap: "10px",
                   transition: "all 0.3s ease",
+                  minWidth: "fit-content",
                 }}
               >
                 <span>Télécharger mon CV</span>
@@ -121,11 +124,12 @@ export default function Resume() {
               style={{
                 color: "white",
                 fontWeight: "600",
-                padding: "16px 32px",
-                fontSize: "16px",
+                padding: "clamp(12px, 3vw, 16px) clamp(20px, 5vw, 32px)",
+                fontSize: "clamp(14px, 3.5vw, 16px)",
                 borderRadius: "50px",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
+                minWidth: "fit-content",
               }}
               onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
             >

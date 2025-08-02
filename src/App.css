@@ -83,3 +83,60 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #764ba2;
 }
+
+/* Mobile Responsive Utilities */
+@media (max-width: 768px) {
+  .mobile-stack {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  
+  .mobile-small-gap {
+    gap: 20px !important;
+  }
+  
+  .mobile-padding {
+    padding: 60px 16px !important;
+  }
+  
+  .mobile-text-center {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-xs-padding {
+    padding: 40px 12px !important;
+  }
+  
+  .mobile-xs-gap {
+    gap: 12px !important;
+  }
+  
+  /* Mobile touch improvements */
+  .hover-lift {
+    transition: transform 0.2s ease !important;
+  }
+  
+  .hover-lift:active {
+    transform: scale(0.98) !important;
+  }
+  
+  /* Better mobile header spacing */
+  .mobile-header {
+    padding: 15px 20px !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  
+  /* Improved mobile scrolling */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Better mobile focus states */
+  input:focus, textarea:focus, button:focus {
+    outline: 2px solid #667eea !important;
+    outline-offset: 2px !important;
+  }
+}

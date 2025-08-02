@@ -31,16 +31,16 @@ export default function Footer() {
   ];
 
   return (
-    <footer style={{
+    <footer className="mobile-padding" style={{
       background: "linear-gradient(to bottom, transparent, rgba(10, 14, 39, 0.8))",
-      paddingTop: "100px",
-      marginTop: "100px",
+      paddingTop: "clamp(60px, 15vw, 100px)",
+      marginTop: "clamp(60px, 15vw, 100px)",
     }}>
       <div style={{
         background: "rgba(26, 32, 53, 0.6)",
         backdropFilter: "blur(10px)",
         borderTop: "1px solid rgba(102, 126, 234, 0.2)",
-        padding: "40px 20px",
+        padding: "clamp(30px, 7vw, 40px) 20px",
       }}>
         <div style={{
           maxWidth: "1200px",
@@ -48,11 +48,11 @@ export default function Footer() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: "30px",
+          gap: "clamp(20px, 5vw, 30px)",
         }}>
           <div style={{
             display: "flex",
-            gap: "20px",
+            gap: "clamp(15px, 4vw, 20px)",
           }}>
             {socialLinks.map((link, index) => (
               <a
@@ -62,8 +62,8 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover-lift"
                 style={{
-                  width: "50px",
-                  height: "50px",
+                  width: "clamp(40px, 10vw, 50px)",
+                  height: "clamp(40px, 10vw, 50px)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -95,13 +95,13 @@ export default function Footer() {
             color: "#a0aec0",
           }}>
             <p style={{
-              fontSize: "14px",
+              fontSize: "clamp(12px, 3vw, 14px)",
               marginBottom: "10px",
             }}>
               © {new Date().getFullYear()} Majda Kamrain. Tous droits réservés.
             </p>
             <p style={{
-              fontSize: "12px",
+              fontSize: "clamp(10px, 2.5vw, 12px)",
               opacity: 0.7,
             }}>
               Conçu avec passion et créativité

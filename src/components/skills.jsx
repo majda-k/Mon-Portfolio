@@ -13,7 +13,7 @@ export default function Skills() {
   ];
 
   return (
-    <section className="fade-in" style={{
+    <section className="fade-in mobile-padding" style={{
       padding: "100px 20px",
       position: "relative",
       overflow: "hidden",
@@ -34,7 +34,7 @@ export default function Skills() {
         textAlign: "center",
       }}>
         <h2 className="text-gradient animate-gradient" style={{
-          fontSize: "48px",
+          fontSize: "clamp(32px, 7vw, 48px)",
           fontWeight: "800",
           marginBottom: "20px",
           textTransform: "uppercase",
@@ -44,21 +44,23 @@ export default function Skills() {
         </h2>
         
         <p style={{
-          fontSize: "20px",
+          fontSize: "clamp(16px, 4vw, 20px)",
           color: "#a0aec0",
-          marginBottom: "60px",
+          marginBottom: "clamp(40px, 8vw, 60px)",
           maxWidth: "600px",
-          margin: "0 auto 60px",
+          margin: "0 auto clamp(40px, 8vw, 60px)",
+          padding: "0 15px",
         }}>
           Technologies et outils que j'utilise pour créer des expériences web exceptionnelles
         </p>
         
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
-          gap: "30px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(clamp(100px, 20vw, 120px), 1fr))",
+          gap: "clamp(15px, 4vw, 30px)",
           maxWidth: "900px",
           margin: "0 auto",
+          padding: "0 15px",
         }}>
           {skills.map((skill, index) => (
             <div
@@ -69,7 +71,7 @@ export default function Skills() {
                 flexDirection: "column",
                 alignItems: "center",
                 gap: "12px",
-                padding: "30px 20px",
+                padding: "clamp(20px, 5vw, 30px) clamp(15px, 4vw, 20px)",
                 borderRadius: "20px",
                 background: "rgba(26, 32, 53, 0.6)",
                 backdropFilter: "blur(10px)",
@@ -89,8 +91,8 @@ export default function Skills() {
               }}
             >
               <div style={{
-                width: "80px",
-                height: "80px",
+                width: "clamp(60px, 15vw, 80px)",
+                height: "clamp(60px, 15vw, 80px)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -111,8 +113,8 @@ export default function Skills() {
                   src={skill.src}
                   alt={skill.alt}
                   style={{
-                    width: "50px",
-                    height: "50px",
+                    width: "clamp(35px, 10vw, 50px)",
+                    height: "clamp(35px, 10vw, 50px)",
                     objectFit: "contain",
                     position: "relative",
                     zIndex: 1,
@@ -120,7 +122,7 @@ export default function Skills() {
                 />
               </div>
               <span style={{
-                fontSize: "16px",
+                fontSize: "clamp(14px, 3.5vw, 16px)",
                 fontWeight: "600",
                 color: "#e2e8f0",
               }}>

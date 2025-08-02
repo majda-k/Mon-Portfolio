@@ -12,7 +12,9 @@
       "Bash(gh repo view:*)",
       "Bash(ls:*)",
       "Bash(git push:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run preview:*)"
     ],
     "deny": []
   }

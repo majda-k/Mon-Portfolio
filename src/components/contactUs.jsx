@@ -32,7 +32,7 @@ export default function ContactUs() {
   };
 
   return (
-    <section id="contact" className="fade-in" style={{
+    <section id="contact" className="fade-in mobile-padding" style={{
       padding: "100px 20px",
       position: "relative",
     }}>
@@ -51,9 +51,10 @@ export default function ContactUs() {
         margin: "0 auto",
         position: "relative",
         zIndex: 1,
+        padding: "0 15px",
       }}>
         <h2 className="text-gradient animate-gradient" style={{
-          fontSize: "48px",
+          fontSize: "clamp(32px, 7vw, 48px)",
           fontWeight: "800",
           marginBottom: "20px",
           textAlign: "center",
@@ -64,10 +65,11 @@ export default function ContactUs() {
         </h2>
         
         <p style={{
-          fontSize: "20px",
+          fontSize: "clamp(16px, 4vw, 20px)",
           color: "#a0aec0",
-          marginBottom: "60px",
+          marginBottom: "clamp(40px, 8vw, 60px)",
           textAlign: "center",
+          padding: "0 15px",
         }}>
           Discutons de votre prochain projet ensemble
         </p>
@@ -109,16 +111,16 @@ export default function ContactUs() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="glass-effect" style={{
-            padding: "40px",
+            padding: "clamp(20px, 5vw, 40px)",
             borderRadius: "24px",
           }}>
-            <div style={{ marginBottom: "30px" }}>
+            <div style={{ marginBottom: "clamp(20px, 5vw, 30px)" }}>
               <label htmlFor="name" style={{
                 display: "block",
                 marginBottom: "10px",
                 color: "#e2e8f0",
                 fontWeight: "600",
-                fontSize: "14px",
+                fontSize: "clamp(12px, 3vw, 14px)",
                 textTransform: "uppercase",
                 letterSpacing: "1px",
               }}>
@@ -137,7 +139,7 @@ export default function ContactUs() {
                   border: "1px solid rgba(102, 126, 234, 0.2)",
                   background: "rgba(26, 32, 53, 0.6)",
                   color: "#e2e8f0",
-                  fontSize: "16px",
+                  fontSize: "clamp(14px, 3.5vw, 16px)",
                   transition: "all 0.3s ease",
                   outline: "none",
                 }}
@@ -146,13 +148,13 @@ export default function ContactUs() {
               />
             </div>
 
-            <div style={{ marginBottom: "30px" }}>
+            <div style={{ marginBottom: "clamp(20px, 5vw, 30px)" }}>
               <label htmlFor="email" style={{
                 display: "block",
                 marginBottom: "10px",
                 color: "#e2e8f0",
                 fontWeight: "600",
-                fontSize: "14px",
+                fontSize: "clamp(12px, 3vw, 14px)",
                 textTransform: "uppercase",
                 letterSpacing: "1px",
               }}>
@@ -171,7 +173,7 @@ export default function ContactUs() {
                   border: "1px solid rgba(102, 126, 234, 0.2)",
                   background: "rgba(26, 32, 53, 0.6)",
                   color: "#e2e8f0",
-                  fontSize: "16px",
+                  fontSize: "clamp(14px, 3.5vw, 16px)",
                   transition: "all 0.3s ease",
                   outline: "none",
                 }}
@@ -180,13 +182,13 @@ export default function ContactUs() {
               />
             </div>
 
-            <div style={{ marginBottom: "30px" }}>
+            <div style={{ marginBottom: "clamp(20px, 5vw, 30px)" }}>
               <label htmlFor="message" style={{
                 display: "block",
                 marginBottom: "10px",
                 color: "#e2e8f0",
                 fontWeight: "600",
-                fontSize: "14px",
+                fontSize: "clamp(12px, 3vw, 14px)",
                 textTransform: "uppercase",
                 letterSpacing: "1px",
               }}>
@@ -205,7 +207,7 @@ export default function ContactUs() {
                   border: "1px solid rgba(102, 126, 234, 0.2)",
                   background: "rgba(26, 32, 53, 0.6)",
                   color: "#e2e8f0",
-                  fontSize: "16px",
+                  fontSize: "clamp(14px, 3.5vw, 16px)",
                   resize: "vertical",
                   minHeight: "150px",
                   transition: "all 0.3s ease",
@@ -224,7 +226,7 @@ export default function ContactUs() {
                 border: "1px solid rgba(239, 68, 68, 0.3)",
                 color: "#f87171",
                 marginBottom: "20px",
-                fontSize: "14px",
+                fontSize: "clamp(12px, 3vw, 14px)",
               }}>
                 {error}
               </div>
@@ -236,8 +238,8 @@ export default function ContactUs() {
               className="hover-lift"
               style={{
                 width: "100%",
-                padding: "18px",
-                fontSize: "16px",
+                padding: "clamp(15px, 4vw, 18px)",
+                fontSize: "clamp(14px, 3.5vw, 16px)",
                 fontWeight: "600",
                 border: "none",
                 borderRadius: "12px",

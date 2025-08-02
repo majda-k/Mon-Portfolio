@@ -34,7 +34,7 @@ export default function Projects() {
   ];
 
   return (
-    <section className="fade-in" style={{
+    <section className="fade-in mobile-padding" style={{
       padding: "100px 20px",
       position: "relative",
     }}>
@@ -43,7 +43,7 @@ export default function Projects() {
         margin: "0 auto",
       }}>
         <h2 className="text-gradient animate-gradient" style={{
-          fontSize: "48px",
+          fontSize: "clamp(32px, 7vw, 48px)",
           fontWeight: "800",
           marginBottom: "20px",
           textAlign: "center",
@@ -54,20 +54,22 @@ export default function Projects() {
         </h2>
         
         <p style={{
-          fontSize: "20px",
+          fontSize: "clamp(16px, 4vw, 20px)",
           color: "#a0aec0",
-          marginBottom: "60px",
+          marginBottom: "clamp(40px, 8vw, 60px)",
           textAlign: "center",
           maxWidth: "600px",
-          margin: "0 auto 60px",
+          margin: "0 auto clamp(40px, 8vw, 60px)",
+          padding: "0 15px",
         }}>
           Découvrez mes réalisations et projets en cours de développement
         </p>
         
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
-          gap: "30px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(clamp(280px, 60vw, 350px), 1fr))",
+          gap: "clamp(20px, 5vw, 30px)",
+          padding: "0 15px",
         }}>
           {projects.map((project, index) => (
             <div
@@ -78,7 +80,7 @@ export default function Projects() {
                 backdropFilter: "blur(10px)",
                 border: "1px solid rgba(102, 126, 234, 0.2)",
                 borderRadius: "24px",
-                padding: "32px",
+                padding: "clamp(20px, 5vw, 32px)",
                 position: "relative",
                 overflow: "hidden",
                 transition: "all 0.3s ease",
@@ -127,7 +129,7 @@ export default function Projects() {
                     {project.icon}
                   </span>
                   <h3 style={{
-                    fontSize: "24px",
+                    fontSize: "clamp(20px, 5vw, 24px)",
                     fontWeight: "700",
                     color: "#e2e8f0",
                     margin: 0,
@@ -137,7 +139,7 @@ export default function Projects() {
                 </div>
                 
                 <p style={{
-                  fontSize: "16px",
+                  fontSize: "clamp(14px, 3.5vw, 16px)",
                   color: "#a0aec0",
                   marginBottom: "20px",
                   lineHeight: "1.6",
@@ -154,7 +156,7 @@ export default function Projects() {
                     {project.features.map((feature, i) => (
                       <li key={i} style={{
                         marginBottom: "8px",
-                        fontSize: "14px",
+                        fontSize: "clamp(12px, 3vw, 14px)",
                         lineHeight: "1.5",
                       }}>
                         {feature}
@@ -177,7 +179,7 @@ export default function Projects() {
                         borderRadius: "20px",
                         background: "rgba(102, 126, 234, 0.1)",
                         border: "1px solid rgba(102, 126, 234, 0.2)",
-                        fontSize: "12px",
+                        fontSize: "clamp(10px, 2.5vw, 12px)",
                         color: "#a0aec0",
                         fontWeight: "500",
                       }}
@@ -202,7 +204,7 @@ export default function Projects() {
                       color: "white",
                       textDecoration: "none",
                       fontWeight: "600",
-                      fontSize: "14px",
+                      fontSize: "clamp(12px, 3vw, 14px)",
                       transition: "all 0.3s ease",
                     }}
                     onMouseEnter={e => {

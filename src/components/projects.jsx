@@ -1,0 +1,228 @@
+export default function Projects() {
+  const projects = [
+    {
+      title: "Application de Gestion Scolaire",
+      icon: "🎓",
+      description: "En cours — Développement d'une plateforme web complète pour la gestion administrative des établissements scolaires.",
+      features: [
+        "Front-end : React.js avec composants réutilisables & Context API",
+        "Back-end : API RESTful avec Laravel & MySQL"
+      ],
+      tech: ["React.js", "Laravel", "MySQL", "Tailwind CSS", "Git"],
+      color: "#667eea",
+    },
+    {
+      title: "Horaires de Prière & Météo",
+      icon: "🕌",
+      description: "Octobre 2024 — Création d'une application affichant les horaires de prière et les prévisions météo, intégrant des APIs.",
+      features: [
+        "React.js avec appels API",
+        "UI moderne avec Tailwind CSS"
+      ],
+      tech: ["React.js", "API REST", "Tailwind CSS"],
+      link: "https://github.com/majda-k/AddanTime",
+      color: "#764ba2",
+    },
+    {
+      title: "Cantine Scolaire",
+      icon: "🍽️",
+      description: "Application web permettant aux élèves de commander des repas en ligne.",
+      tech: ["HTML", "CSS", "PHP", "Bootstrap", "MySQL"],
+      link: "https://github.com/majda-k/project-cantine-php",
+      color: "#f093fb",
+    }
+  ];
+
+  return (
+    <section className="fade-in" style={{
+      padding: "100px 20px",
+      position: "relative",
+    }}>
+      <div style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+      }}>
+        <h2 className="text-gradient animate-gradient" style={{
+          fontSize: "48px",
+          fontWeight: "800",
+          marginBottom: "20px",
+          textAlign: "center",
+          textTransform: "uppercase",
+          letterSpacing: "-1px",
+        }}>
+          Mes Projets
+        </h2>
+        
+        <p style={{
+          fontSize: "20px",
+          color: "#a0aec0",
+          marginBottom: "60px",
+          textAlign: "center",
+          maxWidth: "600px",
+          margin: "0 auto 60px",
+        }}>
+          Découvrez mes réalisations et projets en cours de développement
+        </p>
+        
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+          gap: "30px",
+        }}>
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="hover-lift"
+              style={{
+                background: "rgba(26, 32, 53, 0.6)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(102, 126, 234, 0.2)",
+                borderRadius: "24px",
+                padding: "32px",
+                position: "relative",
+                overflow: "hidden",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.border = `1px solid ${project.color}`;
+                e.currentTarget.querySelector('.project-glow').style.opacity = "0.3";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.border = "1px solid rgba(102, 126, 234, 0.2)";
+                e.currentTarget.querySelector('.project-glow').style.opacity = "0";
+              }}
+            >
+              <div 
+                className="project-glow"
+                style={{
+                  position: "absolute",
+                  top: "-50%",
+                  right: "-50%",
+                  width: "200%",
+                  height: "200%",
+                  background: `radial-gradient(circle, ${project.color}30 0%, transparent 70%)`,
+                  transition: "opacity 0.3s ease",
+                  opacity: 0,
+                  pointerEvents: "none",
+                }}
+              ></div>
+              
+              <div style={{ position: "relative", zIndex: 1 }}>
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "16px",
+                  marginBottom: "20px",
+                }}>
+                  <span style={{
+                    fontSize: "40px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "60px",
+                    height: "60px",
+                    borderRadius: "16px",
+                    background: `linear-gradient(135deg, ${project.color}20 0%, ${project.color}10 100%)`,
+                  }}>
+                    {project.icon}
+                  </span>
+                  <h3 style={{
+                    fontSize: "24px",
+                    fontWeight: "700",
+                    color: "#e2e8f0",
+                    margin: 0,
+                  }}>
+                    {project.title}
+                  </h3>
+                </div>
+                
+                <p style={{
+                  fontSize: "16px",
+                  color: "#a0aec0",
+                  marginBottom: "20px",
+                  lineHeight: "1.6",
+                }}>
+                  {project.description}
+                </p>
+                
+                {project.features && (
+                  <ul style={{
+                    marginBottom: "20px",
+                    paddingLeft: "20px",
+                    color: "#cbd5e0",
+                  }}>
+                    {project.features.map((feature, i) => (
+                      <li key={i} style={{
+                        marginBottom: "8px",
+                        fontSize: "14px",
+                        lineHeight: "1.5",
+                      }}>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                
+                <div style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "8px",
+                  marginBottom: "20px",
+                }}>
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      style={{
+                        padding: "6px 12px",
+                        borderRadius: "20px",
+                        background: "rgba(102, 126, 234, 0.1)",
+                        border: "1px solid rgba(102, 126, 234, 0.2)",
+                        fontSize: "12px",
+                        color: "#a0aec0",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      padding: "12px 24px",
+                      borderRadius: "12px",
+                      background: `linear-gradient(135deg, ${project.color} 0%, ${project.color}cc 100%)`,
+                      color: "white",
+                      textDecoration: "none",
+                      fontWeight: "600",
+                      fontSize: "14px",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.transform = "translateX(5px)";
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.transform = "translateX(0)";
+                    }}
+                  >
+                    Voir le code
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

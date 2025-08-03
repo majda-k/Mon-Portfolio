@@ -45,7 +45,7 @@ export default function Skills() {
         
         <p style={{
           fontSize: "clamp(16px, 4vw, 20px)",
-          color: "#a0aec0",
+          color: "var(--text-secondary)",
           marginBottom: "clamp(40px, 8vw, 60px)",
           maxWidth: "600px",
           margin: "0 auto clamp(40px, 8vw, 60px)",
@@ -65,7 +65,7 @@ export default function Skills() {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="hover-lift"
+              className="hover-lift card-element"
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -73,9 +73,9 @@ export default function Skills() {
                 gap: "12px",
                 padding: "clamp(20px, 5vw, 30px) clamp(15px, 4vw, 20px)",
                 borderRadius: "20px",
-                background: "rgba(26, 32, 53, 0.6)",
+                background: "var(--card-bg)",
                 backdropFilter: "blur(10px)",
-                border: "1px solid rgba(102, 126, 234, 0.2)",
+                border: "1px solid var(--border-accent)",
                 transition: "all 0.3s ease",
                 cursor: "pointer",
               }}
@@ -85,7 +85,7 @@ export default function Skills() {
                 e.currentTarget.querySelector('.skill-hover-bg').style.opacity = "1";
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.border = "1px solid rgba(102, 126, 234, 0.2)";
+                e.currentTarget.style.border = "1px solid var(--border-accent)";
                 e.currentTarget.style.boxShadow = "none";
                 e.currentTarget.querySelector('.skill-hover-bg').style.opacity = "0";
               }}
@@ -124,7 +124,7 @@ export default function Skills() {
               <span style={{
                 fontSize: "clamp(14px, 3.5vw, 16px)",
                 fontWeight: "600",
-                color: "#e2e8f0",
+                color: "var(--text-primary)",
               }}>
                 {skill.alt}
               </span>

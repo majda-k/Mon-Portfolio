@@ -42,7 +42,7 @@ export default function ContactUs() {
         left: "-10%",
         width: "300px",
         height: "300px",
-        background: "radial-gradient(circle, rgba(118, 75, 162, 0.2) 0%, transparent 70%)",
+        background: "radial-gradient(circle, var(--section-glow) 0%, transparent 70%)",
         filter: "blur(40px)",
       }}></div>
       
@@ -66,7 +66,7 @@ export default function ContactUs() {
         
         <p style={{
           fontSize: "clamp(16px, 4vw, 20px)",
-          color: "#a0aec0",
+          color: "var(--text-secondary)",
           marginBottom: "clamp(40px, 8vw, 60px)",
           textAlign: "center",
           padding: "0 15px",
@@ -89,6 +89,7 @@ export default function ContactUs() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              boxShadow: "0 4px 12px rgba(16, 185, 129, 0.3)",
             }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3">
                 <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -97,14 +98,14 @@ export default function ContactUs() {
             <p style={{
               fontSize: "24px",
               fontWeight: "700",
-              color: "#e2e8f0",
+              color: "var(--success-text)",
               marginBottom: "10px",
             }}>
               Message envoyé avec succès!
             </p>
             <p style={{
               fontSize: "16px",
-              color: "#a0aec0",
+              color: "var(--text-secondary)",
             }}>
               Je vous répondrai dans les plus brefs délais.
             </p>
@@ -118,7 +119,7 @@ export default function ContactUs() {
               <label htmlFor="name" style={{
                 display: "block",
                 marginBottom: "10px",
-                color: "#e2e8f0",
+                color: "var(--text-primary)",
                 fontWeight: "600",
                 fontSize: "clamp(12px, 3vw, 14px)",
                 textTransform: "uppercase",
@@ -136,15 +137,22 @@ export default function ContactUs() {
                   width: "100%",
                   padding: "16px",
                   borderRadius: "12px",
-                  border: "1px solid rgba(102, 126, 234, 0.2)",
-                  background: "rgba(26, 32, 53, 0.6)",
-                  color: "#e2e8f0",
+                  border: "1px solid var(--input-border)",
+                  background: "var(--input-bg)",
+                  color: "var(--text-primary)",
+                  boxShadow: "0 2px 4px var(--shadow-color)",
                   fontSize: "clamp(14px, 3.5vw, 16px)",
                   transition: "all 0.3s ease",
                   outline: "none",
                 }}
-                onFocus={e => e.currentTarget.style.border = "1px solid #667eea"}
-                onBlur={e => e.currentTarget.style.border = "1px solid rgba(102, 126, 234, 0.2)"}
+                onFocus={e => {
+                  e.currentTarget.style.border = "1px solid var(--input-focus)";
+                  e.currentTarget.style.boxShadow = "0 0 0 3px rgba(102, 126, 234, 0.1)";
+                }}
+                onBlur={e => {
+                  e.currentTarget.style.border = "1px solid var(--input-border)";
+                  e.currentTarget.style.boxShadow = "0 2px 4px var(--shadow-color)";
+                }}
               />
             </div>
 
@@ -152,7 +160,7 @@ export default function ContactUs() {
               <label htmlFor="email" style={{
                 display: "block",
                 marginBottom: "10px",
-                color: "#e2e8f0",
+                color: "var(--text-primary)",
                 fontWeight: "600",
                 fontSize: "clamp(12px, 3vw, 14px)",
                 textTransform: "uppercase",
@@ -170,15 +178,22 @@ export default function ContactUs() {
                   width: "100%",
                   padding: "16px",
                   borderRadius: "12px",
-                  border: "1px solid rgba(102, 126, 234, 0.2)",
-                  background: "rgba(26, 32, 53, 0.6)",
-                  color: "#e2e8f0",
+                  border: "1px solid var(--input-border)",
+                  background: "var(--input-bg)",
+                  color: "var(--text-primary)",
+                  boxShadow: "0 2px 4px var(--shadow-color)",
                   fontSize: "clamp(14px, 3.5vw, 16px)",
                   transition: "all 0.3s ease",
                   outline: "none",
                 }}
-                onFocus={e => e.currentTarget.style.border = "1px solid #667eea"}
-                onBlur={e => e.currentTarget.style.border = "1px solid rgba(102, 126, 234, 0.2)"}
+                onFocus={e => {
+                  e.currentTarget.style.border = "1px solid var(--input-focus)";
+                  e.currentTarget.style.boxShadow = "0 0 0 3px rgba(102, 126, 234, 0.1)";
+                }}
+                onBlur={e => {
+                  e.currentTarget.style.border = "1px solid var(--input-border)";
+                  e.currentTarget.style.boxShadow = "0 2px 4px var(--shadow-color)";
+                }}
               />
             </div>
 
@@ -186,7 +201,7 @@ export default function ContactUs() {
               <label htmlFor="message" style={{
                 display: "block",
                 marginBottom: "10px",
-                color: "#e2e8f0",
+                color: "var(--text-primary)",
                 fontWeight: "600",
                 fontSize: "clamp(12px, 3vw, 14px)",
                 textTransform: "uppercase",
@@ -204,17 +219,24 @@ export default function ContactUs() {
                   width: "100%",
                   padding: "16px",
                   borderRadius: "12px",
-                  border: "1px solid rgba(102, 126, 234, 0.2)",
-                  background: "rgba(26, 32, 53, 0.6)",
-                  color: "#e2e8f0",
+                  border: "1px solid var(--input-border)",
+                  background: "var(--input-bg)",
+                  color: "var(--text-primary)",
+                  boxShadow: "0 2px 4px var(--shadow-color)",
                   fontSize: "clamp(14px, 3.5vw, 16px)",
                   resize: "vertical",
                   minHeight: "150px",
                   transition: "all 0.3s ease",
                   outline: "none",
                 }}
-                onFocus={e => e.currentTarget.style.border = "1px solid #667eea"}
-                onBlur={e => e.currentTarget.style.border = "1px solid rgba(102, 126, 234, 0.2)"}
+                onFocus={e => {
+                  e.currentTarget.style.border = "1px solid var(--input-focus)";
+                  e.currentTarget.style.boxShadow = "0 0 0 3px rgba(102, 126, 234, 0.1)";
+                }}
+                onBlur={e => {
+                  e.currentTarget.style.border = "1px solid var(--input-border)";
+                  e.currentTarget.style.boxShadow = "0 2px 4px var(--shadow-color)";
+                }}
               />
             </div>
 
@@ -222,9 +244,9 @@ export default function ContactUs() {
               <div style={{
                 padding: "12px",
                 borderRadius: "8px",
-                background: "rgba(239, 68, 68, 0.1)",
-                border: "1px solid rgba(239, 68, 68, 0.3)",
-                color: "#f87171",
+                background: "var(--error-bg)",
+                border: "1px solid var(--error-border)",
+                color: "var(--error-text)",
                 marginBottom: "20px",
                 fontSize: "clamp(12px, 3vw, 14px)",
               }}>
@@ -246,7 +268,7 @@ export default function ContactUs() {
                 background: loading 
                   ? "rgba(102, 126, 234, 0.5)" 
                   : "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                color: "white",
+                color: "var(--button-text)",
                 cursor: loading ? "not-allowed" : "pointer",
                 transition: "all 0.3s ease",
                 display: "flex",

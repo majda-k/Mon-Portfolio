@@ -1,6 +1,6 @@
 export default function Resume() {
   return (
-    <section className="fade-in mobile-padding" style={{
+    <section className="fade-in mobile-padding hero-section" style={{
       minHeight: "100vh",
       display: "flex",
       alignItems: "center",
@@ -12,7 +12,7 @@ export default function Resume() {
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
-        gap: "80px",
+        gap: "clamp(30px, 8vw, 80px)",
         maxWidth: "1200px",
         width: "100%",
         flexWrap: "wrap",
@@ -24,22 +24,22 @@ export default function Resume() {
         }}>
           <div style={{
             position: "absolute",
-            inset: "-20px",
+            inset: "clamp(-15px, -3vw, -20px)",
             background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
             borderRadius: "50%",
-            filter: "blur(40px)",
+            filter: "blur(clamp(20px, 5vw, 40px))",
             opacity: 0.5,
           }}></div>
           <img
             src="./logo.jpg"
             alt="Majda Kamrain"
-            className="hover-lift"
+            className="hover-lift profile-image"
             style={{
-              width: "clamp(250px, 40vw, 400px)",
-              height: "clamp(250px, 40vw, 400px)",
+              width: "clamp(150px, 25vw, 400px)",
+              height: "clamp(150px, 25vw, 400px)",
               objectFit: "cover",
               borderRadius: "50%",
-              border: "5px solid rgba(102, 126, 234, 0.3)",
+              border: "clamp(3px, 1vw, 5px) solid var(--border-strong)",
               position: "relative",
               zIndex: 1,
             }}
@@ -52,30 +52,30 @@ export default function Resume() {
           textAlign: "center",
         }}>
           <p style={{
-            fontSize: "18px",
-            color: "#a0aec0",
-            marginBottom: "16px",
-            letterSpacing: "2px",
+            fontSize: "clamp(14px, 4vw, 18px)",
+            color: "var(--text-secondary)",
+            marginBottom: "clamp(12px, 3vw, 16px)",
+            letterSpacing: "clamp(1px, 0.5vw, 2px)",
             textTransform: "uppercase",
           }}>
             Développeuse Web Full Stack
           </p>
           
           <h1 style={{
-            fontSize: "clamp(32px, 8vw, 64px)",
+            fontSize: "clamp(28px, 8vw, 64px)",
             fontWeight: "800",
-            marginBottom: "24px",
+            marginBottom: "clamp(16px, 4vw, 24px)",
             lineHeight: "1.1",
           }}>
             <span className="text-gradient animate-gradient">Majda Kamrain</span>
           </h1>
           
           <p style={{
-            fontSize: "clamp(16px, 4vw, 20px)",
-            color: "#cbd5e0",
+            fontSize: "clamp(14px, 4vw, 20px)",
+            color: "var(--text-secondary)",
             maxWidth: "600px",
-            margin: "0 auto 40px",
-            lineHeight: "1.8",
+            margin: "0 auto clamp(20px, 5vw, 40px)",
+            lineHeight: "1.6",
             padding: "0 10px",
           }}>
             Créative, rigoureuse et passionnée. Je conçois des solutions web modernes 
@@ -98,7 +98,7 @@ export default function Resume() {
                 className="hover-lift"
                 style={{
                   background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                  color: "white",
+                  color: "var(--button-text)",
                   fontWeight: "600",
                   padding: "clamp(12px, 3vw, 16px) clamp(20px, 5vw, 32px)",
                   fontSize: "clamp(14px, 3.5vw, 16px)",
@@ -120,9 +120,8 @@ export default function Resume() {
             </a>
             
             <button
-              className="glass-effect hover-lift"
+              className="glass-effect hover-lift contact-button"
               style={{
-                color: "white",
                 fontWeight: "600",
                 padding: "clamp(12px, 3vw, 16px) clamp(20px, 5vw, 32px)",
                 fontSize: "clamp(14px, 3.5vw, 16px)",

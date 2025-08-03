@@ -32,15 +32,16 @@ export default function Footer() {
 
   return (
     <footer className="mobile-padding" style={{
-      background: "linear-gradient(to bottom, transparent, rgba(10, 14, 39, 0.8))",
+      background: "var(--footer-bg)",
       paddingTop: "clamp(60px, 15vw, 100px)",
       marginTop: "clamp(60px, 15vw, 100px)",
     }}>
       <div style={{
-        background: "rgba(26, 32, 53, 0.6)",
+        background: "var(--footer-card)",
         backdropFilter: "blur(10px)",
-        borderTop: "1px solid rgba(102, 126, 234, 0.2)",
+        borderTop: "1px solid var(--border-strong)",
         padding: "clamp(30px, 7vw, 40px) 20px",
+        boxShadow: "0 -4px 12px var(--shadow-color)",
       }}>
         <div style={{
           maxWidth: "1200px",
@@ -60,7 +61,7 @@ export default function Footer() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover-lift"
+                className="hover-lift social-icon"
                 style={{
                   width: "clamp(40px, 10vw, 50px)",
                   height: "clamp(40px, 10vw, 50px)",
@@ -68,20 +69,20 @@ export default function Footer() {
                   alignItems: "center",
                   justifyContent: "center",
                   borderRadius: "12px",
-                  background: "rgba(102, 126, 234, 0.1)",
-                  border: "1px solid rgba(102, 126, 234, 0.2)",
-                  color: "#a0aec0",
+                  background: "var(--glass-bg)",
+                  border: "1px solid var(--border-accent)",
+                  color: "var(--text-secondary)",
                   transition: "all 0.3s ease",
                 }}
                 onMouseEnter={e => {
                   e.currentTarget.style.background = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
-                  e.currentTarget.style.color = "white";
+                  e.currentTarget.style.color = "var(--button-text)";
                   e.currentTarget.style.border = "1px solid transparent";
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.background = "rgba(102, 126, 234, 0.1)";
-                  e.currentTarget.style.color = "#a0aec0";
-                  e.currentTarget.style.border = "1px solid rgba(102, 126, 234, 0.2)";
+                  e.currentTarget.style.color = "var(--text-secondary)";
+                  e.currentTarget.style.border = "1px solid var(--border-accent)";
                 }}
                 title={link.name}
               >
@@ -92,7 +93,7 @@ export default function Footer() {
           
           <div style={{
             textAlign: "center",
-            color: "#a0aec0",
+            color: "var(--text-secondary)",
           }}>
             <p style={{
               fontSize: "clamp(12px, 3vw, 14px)",

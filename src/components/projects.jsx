@@ -55,7 +55,7 @@ export default function Projects() {
         
         <p style={{
           fontSize: "clamp(16px, 4vw, 20px)",
-          color: "#a0aec0",
+          color: "var(--text-secondary)",
           marginBottom: "clamp(40px, 8vw, 60px)",
           textAlign: "center",
           maxWidth: "600px",
@@ -74,11 +74,11 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="hover-lift"
+              className="hover-lift card-element"
               style={{
-                background: "rgba(26, 32, 53, 0.6)",
+                background: "var(--card-bg)",
                 backdropFilter: "blur(10px)",
-                border: "1px solid rgba(102, 126, 234, 0.2)",
+                border: "1px solid var(--border-accent)",
                 borderRadius: "24px",
                 padding: "clamp(20px, 5vw, 32px)",
                 position: "relative",
@@ -90,7 +90,7 @@ export default function Projects() {
                 e.currentTarget.querySelector('.project-glow').style.opacity = "0.3";
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.border = "1px solid rgba(102, 126, 234, 0.2)";
+                e.currentTarget.style.border = "1px solid var(--border-accent)";
                 e.currentTarget.querySelector('.project-glow').style.opacity = "0";
               }}
             >
@@ -131,7 +131,7 @@ export default function Projects() {
                   <h3 style={{
                     fontSize: "clamp(20px, 5vw, 24px)",
                     fontWeight: "700",
-                    color: "#e2e8f0",
+                    color: "var(--text-primary)",
                     margin: 0,
                   }}>
                     {project.title}
@@ -140,7 +140,7 @@ export default function Projects() {
                 
                 <p style={{
                   fontSize: "clamp(14px, 3.5vw, 16px)",
-                  color: "#a0aec0",
+                  color: "var(--text-secondary)",
                   marginBottom: "20px",
                   lineHeight: "1.6",
                 }}>
@@ -151,7 +151,7 @@ export default function Projects() {
                   <ul style={{
                     marginBottom: "20px",
                     paddingLeft: "20px",
-                    color: "#cbd5e0",
+                    color: "var(--text-secondary)",
                   }}>
                     {project.features.map((feature, i) => (
                       <li key={i} style={{
@@ -178,9 +178,9 @@ export default function Projects() {
                         padding: "6px 12px",
                         borderRadius: "20px",
                         background: "rgba(102, 126, 234, 0.1)",
-                        border: "1px solid rgba(102, 126, 234, 0.2)",
+                        border: "1px solid var(--border-accent)",
                         fontSize: "clamp(10px, 2.5vw, 12px)",
-                        color: "#a0aec0",
+                        color: "var(--text-secondary)",
                         fontWeight: "500",
                       }}
                     >
@@ -201,7 +201,7 @@ export default function Projects() {
                       padding: "12px 24px",
                       borderRadius: "12px",
                       background: `linear-gradient(135deg, ${project.color} 0%, ${project.color}cc 100%)`,
-                      color: "white",
+                      color: "var(--button-text)",
                       textDecoration: "none",
                       fontWeight: "600",
                       fontSize: "clamp(12px, 3vw, 14px)",

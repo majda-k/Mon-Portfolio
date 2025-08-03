@@ -2,6 +2,7 @@ import { IoLogoLinkedin } from "react-icons/io";
 import { MdOutlineAttachEmail } from "react-icons/md";
 import { IoLogoGithub } from "react-icons/io";
 import { useWindowSize } from '../hooks/useWindowSize';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   const { width } = useWindowSize();
@@ -13,8 +14,8 @@ export default function Header() {
       top: 0,
       zIndex: 100,
       backdropFilter: "blur(10px)",
-      backgroundColor: "rgba(10, 14, 39, 0.8)",
-      borderBottom: "1px solid rgba(102, 126, 234, 0.2)",
+      backgroundColor: "var(--card-bg)",
+      borderBottom: "1px solid var(--border-strong)",
     }}>
       <div className={isMobile ? "mobile-header" : ""} style={{
         display: "flex",
@@ -56,18 +57,18 @@ export default function Header() {
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
-                  color: "#a0aec0",
+                  color: "var(--text-secondary)",
                   textDecoration: "none",
                   fontSize: "clamp(14px, 3.5vw, 16px)",
                   transition: "color 0.3s ease",
                   padding: "clamp(6px, 2vw, 8px) clamp(12px, 3vw, 16px)",
                   borderRadius: "8px",
-                  backgroundColor: "rgba(102, 126, 234, 0.1)",
+                  backgroundColor: "var(--glass-bg)",
                   whiteSpace: "nowrap",
                   minWidth: "fit-content",
                 }}
                 onMouseEnter={e => e.currentTarget.style.color = "#667eea"}
-                onMouseLeave={e => e.currentTarget.style.color = "#a0aec0"}
+                onMouseLeave={e => e.currentTarget.style.color = "var(--text-secondary)"}
               >
                 <MdOutlineAttachEmail size={20} />
                 {!isMobile && <span>Email</span>}
@@ -83,18 +84,18 @@ export default function Header() {
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
-                  color: "#a0aec0",
+                  color: "var(--text-secondary)",
                   textDecoration: "none",
                   fontSize: "clamp(14px, 3.5vw, 16px)",
                   transition: "color 0.3s ease",
                   padding: "clamp(6px, 2vw, 8px) clamp(12px, 3vw, 16px)",
                   borderRadius: "8px",
-                  backgroundColor: "rgba(102, 126, 234, 0.1)",
+                  backgroundColor: "var(--glass-bg)",
                   whiteSpace: "nowrap",
                   minWidth: "fit-content",
                 }}
                 onMouseEnter={e => e.currentTarget.style.color = "#0077b5"}
-                onMouseLeave={e => e.currentTarget.style.color = "#a0aec0"}
+                onMouseLeave={e => e.currentTarget.style.color = "var(--text-secondary)"}
               >
                 <IoLogoLinkedin size={20} />
                 {!isMobile && <span>LinkedIn</span>}
@@ -110,22 +111,25 @@ export default function Header() {
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
-                  color: "#a0aec0",
+                  color: "var(--text-secondary)",
                   textDecoration: "none",
                   fontSize: "clamp(14px, 3.5vw, 16px)",
                   transition: "color 0.3s ease",
                   padding: "clamp(6px, 2vw, 8px) clamp(12px, 3vw, 16px)",
                   borderRadius: "8px",
-                  backgroundColor: "rgba(102, 126, 234, 0.1)",
+                  backgroundColor: "var(--glass-bg)",
                   whiteSpace: "nowrap",
                   minWidth: "fit-content",
                 }}
-                onMouseEnter={e => e.currentTarget.style.color = "#ffffff"}
-                onMouseLeave={e => e.currentTarget.style.color = "#a0aec0"}
+                onMouseEnter={e => e.currentTarget.style.color = "var(--text-primary)"}
+                onMouseLeave={e => e.currentTarget.style.color = "var(--text-secondary)"}
               >
                 <IoLogoGithub size={20} />
                 {!isMobile && <span>GitHub</span>}
               </a>
+            </li>
+            <li>
+              <ThemeToggle />
             </li>
           </ul>
         </nav>

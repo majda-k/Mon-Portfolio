@@ -1,13 +1,73 @@
 :root {
   --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --bg-dark: #0a0e27;
+  --accent: #667eea;
+  
+  /* Theme transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Theme (Default) */
+:root,
+.dark {
+  --bg-primary: #0a0e27;
   --bg-secondary: #151930;
+  --bg-tertiary: #1a2035;
   --text-primary: #ffffff;
   --text-secondary: #a0aec0;
-  --accent: #667eea;
+  --text-muted: #6b7280;
   --card-bg: rgba(26, 32, 53, 0.9);
-  --border-color: rgba(102, 126, 234, 0.3);
+  --card-bg-solid: rgba(26, 32, 53, 0.95);
+  --border-color: rgba(102, 126, 234, 0.4);
+  --border-light: rgba(255, 255, 255, 0.2);
+  --border-accent: rgba(255, 255, 255, 0.3);
+  --border-strong: rgba(255, 255, 255, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --input-bg: rgba(26, 32, 53, 0.6);
+  --input-border: rgba(102, 126, 234, 0.2);
+  --input-focus: #667eea;
+  --button-text: #ffffff;
+  --success-text: #ffffff;
+  --success-bg: rgba(16, 185, 129, 0.1);
+  --success-border: rgba(16, 185, 129, 0.3);
+  --error-text: #f87171;
+  --error-bg: rgba(239, 68, 68, 0.1);
+  --error-border: rgba(239, 68, 68, 0.3);
+  --footer-bg: linear-gradient(to bottom, transparent, rgba(10, 14, 39, 0.8));
+  --footer-card: rgba(26, 32, 53, 0.6);
+  --section-glow: rgba(118, 75, 162, 0.2);
+}
+
+/* Light Theme */
+.light {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-bg-solid: rgba(255, 255, 255, 0.95);
+  --border-color: rgba(102, 126, 234, 0.2);
+  --border-light: rgba(0, 0, 0, 0.08);
+  --border-accent: rgba(148, 163, 184, 0.3);
+  --border-strong: rgba(100, 116, 139, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --input-bg: rgba(248, 250, 252, 0.95);
+  --input-border: rgba(148, 163, 184, 0.3);
+  --input-focus: #4f46e5;
+  --button-text: #ffffff;
+  --success-text: #059669;
+  --success-bg: rgba(5, 150, 105, 0.1);
+  --success-border: rgba(5, 150, 105, 0.3);
+  --error-text: #dc2626;
+  --error-bg: rgba(220, 38, 38, 0.1);
+  --error-border: rgba(220, 38, 38, 0.3);
+  --footer-bg: linear-gradient(to bottom, transparent, rgba(248, 250, 252, 0.95));
+  --footer-card: rgba(255, 255, 255, 0.9);
+  --section-glow: rgba(79, 70, 229, 0.15);
 }
 
 * {
@@ -20,9 +80,10 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--bg-dark);
+  background: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .animate-gradient {
@@ -55,13 +116,22 @@ body {
 }
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-accent);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .text-gradient {
   background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced gradient for light mode */
+.light .text-gradient {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -84,6 +154,124 @@ body {
   background: #764ba2;
 }
 
+/* Enhanced theme transitions */
+* {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Specific transitions for interactive elements */
+button, a, input, textarea {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Theme switch animation */
+.theme-transition {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Input placeholder styling */
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* Light mode specific improvements */
+.light input::placeholder, 
+.light textarea::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+/* Social icons enhancement for light mode */
+.light .social-icon {
+  background: rgba(248, 250, 252, 0.8) !important;
+  border: 1px solid rgba(148, 163, 184, 0.3) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .social-icon:hover {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Enhanced borders for dark mode */
+.dark .glass-effect,
+:root .glass-effect {
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .hover-lift:hover,
+:root .hover-lift:hover {
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Glass effect enhancement for light mode */
+.light .glass-effect {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(148, 163, 184, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light .hover-lift:hover {
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2) !important;
+}
+
+/* Enhanced card styling for dark mode */
+.dark .card-element,
+:root .card-element {
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(26, 32, 53, 0.8) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Light mode card styling */
+.light .card-element {
+  border: 1px solid rgba(148, 163, 184, 0.2) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Contact button specific styling */
+.contact-button {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark mode contact button */
+.dark .contact-button,
+:root .contact-button {
+  color: rgba(255, 255, 255, 0.9) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(10px);
+}
+
+.dark .contact-button:hover,
+:root .contact-button:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+}
+
+/* Light mode contact button */
+.light .contact-button {
+  color: var(--text-primary) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(148, 163, 184, 0.3) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .contact-button:hover {
+  background: rgba(255, 255, 255, 1) !important;
+  border: 1px solid rgba(102, 126, 234, 0.4) !important;
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.2) !important;
+  transform: translateY(-2px);
+}
+
 /* Mobile Responsive Utilities */
 @media (max-width: 768px) {
   .mobile-stack {
@@ -96,17 +284,34 @@ body {
   }
   
   .mobile-padding {
-    padding: 60px 16px !important;
+    padding: 40px 16px !important;
   }
   
   .mobile-text-center {
     text-align: center !important;
   }
+  
+  /* Profile image responsive sizing */
+  .profile-image {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  
+  /* Reduce hero section height on mobile */
+  .hero-section {
+    min-height: 80vh !important;
+    justify-content: flex-start !important;
+    padding-top: 40px !important;
+  }
+  
+  .mobile-small-gap {
+    gap: 15px !important;
+  }
 }
 
 @media (max-width: 480px) {
   .mobile-xs-padding {
-    padding: 40px 12px !important;
+    padding: 30px 12px !important;
   }
   
   .mobile-xs-gap {
@@ -127,6 +332,18 @@ body {
     padding: 15px 20px !important;
     flex-direction: column !important;
     gap: 20px !important;
+  }
+  
+  /* Profile image for very small screens */
+  .profile-image {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  /* Move hero content higher on small screens */
+  .hero-section {
+    min-height: 70vh !important;
+    padding-top: 20px !important;
   }
   
   /* Improved mobile scrolling */
